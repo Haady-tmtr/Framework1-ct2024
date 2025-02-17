@@ -1,0 +1,11 @@
+{% extends "uo/menu.html" %}
+
+{% block content %}
+  <h2>Connexion</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+  </form>
+  <p><a href="{% url 'menu' %}">Retour au menu</a></p>
+{% endblock %}

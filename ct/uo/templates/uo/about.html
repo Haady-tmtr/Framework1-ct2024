@@ -1,0 +1,28 @@
+{% extends "uo/menu.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %} About {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="mb-5 text-center">
+            
+            <h2 class="mb-4">Informations du Projet CT de Frameworks Web 1 </h2>
+
+            <ul class="list-unstyled"><h3 class="mb-2">Les Membres</h3>
+                <li>THEAULT Thomas</li>
+                <li>TIEMTORE Mohamed Haady</li>
+                <li>AHMED IZID BIH NEYE Fatimetou Zahra</li>
+                <li>SACKO Bakary</li>
+            </ul>
+        
+        </div>
+        <div class="mb-3">
+            <h3 class="text-center mb-4">But du projet</h3>
+            <p>Mise en place en groupe d'un site web gérant les formations et les UEs associées d'une université via Django.</p>
+            <p>Il faut donc mettre en place l'application, les Modeles ainsi que les différentes pages nécessaires à l'utilisation des Modeles et une gestion des autorisations.</p>
+            <p>De plus le site sera embellit par l'utilisation de Bootstrap à la fin du projet.</p>
+        
+        </div>
+    </div>
+{% endblock %}

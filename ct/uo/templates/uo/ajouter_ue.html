@@ -1,0 +1,30 @@
+{% extends "uo/menu.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %} Ajouter une UE {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-6 mb-4">Ajouter une Unité d'Enseignement (UE)</h1>
+        <p class="text-muted">Veuillez remplir le formulaire ci-dessous pour ajouter une nouvelle UE.</p>
+    </div>
+    
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+                {% bootstrap_form form layout='horizontal' %}
+                <div class="text-end mt-4">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-plus-circle"></i> Ajouter
+                    </button>
+                    <a href="{% url 'ues' %}" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Retour à la liste
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

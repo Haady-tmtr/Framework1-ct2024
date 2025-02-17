@@ -1,0 +1,92 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$1DUbPvV6kw4X4kVtcq71C4$pUa72APTuaXEIeFcVHmqCzwxbuvVeHh+FbPwa2G+GZo=",
+        "last_login": "2024-12-18T18:25:15.175Z",
+        "is_superuser": true,
+        "username": "mohamedhaady",
+        "first_name": "Tiemtore",
+        "last_name": "Mohamed Haady",
+        "email": "haady@exemple.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-12-18T17:47:12.740Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$g8eq9C7siXMxA5UgDZefNX$f4dI9pWg3Xo7F1KcPoMT3ALKILTnw1rDNIUBPm7El1Q=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Frédéric_Loulergue",
+        "first_name": "Loulergue",
+        "last_name": "Frédéric",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-18T18:59:37Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$FKHdtCvV2ufyPcV3KYcwv5$KFELT/reqOZKeEa4hy9tUFqs6tjsMEmko34x5OJ/gpU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Jean_Michel_Couvreur",
+        "first_name": "Couvreur",
+        "last_name": "Jean Michel",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-18T19:00:52Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$4c1a8tzioZUIOk1QFBlNPd$UVmaltwmXP7tVAt3+Py+rUpG5QNGOxiumYm7zoQKtIE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Sébastien_Rivault",
+        "first_name": "Rivault",
+        "last_name": "Sébastien",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-18T19:02:16Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$C9kv0SwNnIyMNaa7Gf2UMd$ds+SKhQHs+J3zEzg+erJiMpt/2dCcL341JUKXZRhU8Q=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Timothée_Martinod",
+        "first_name": "Martinod",
+        "last_name": "Timothée",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-18T19:03:32Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

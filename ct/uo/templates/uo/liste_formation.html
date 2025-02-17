@@ -1,0 +1,50 @@
+{% extends "uo/menu.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %} Liste des formations {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-6">Liste des Formations</h1>
+        <p class="text-muted">Découvrez toutes les formations disponibles dans notre département.</p>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" style="width: 5%;">#</th>
+                        <th scope="col" style="width: 50%;">Intitulé</th>
+                        <th scope="col" style="width: 30%;">Responsable</th>
+                        <th scope="col" style="width: 15%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for formation in formations %}
+                        <tr>
+                            <td class="text-center">{{ forloop.counter }}</td>
+                            <td>{{ formation.intitule }}</td>
+                            <td>
+                                {% if formation.responsable %}
+                                    {{ formation.responsable.last_name }} {{ formation.responsable.first_name }}
+                                {% else %}
+                                    <span class="text-muted">Non défini</span>
+                                {% endif %}
+                            </td>
+                            <td class="text-center">
+                                <a href="{% url 'details_formation' formation.id %}" class="btn btn-sm btn-info text-white">
+                                    <i class="bi bi-eye"></i> Détails
+                                </a>
+                                {% if user == formation.responsable %}    
+                                    <a href="{% url 'resume_formation' formation.id %}" class="btn btn-sm bg-success text-white">Résumé</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+[
+    {
+      "model": "uo.formation",
+      "pk": 1,
+      "fields": {
+        "intitule": "Licence Informatique — Parcours Ingénierie informatique",
+        "description": "Formation en ingénierie informatique, axée sur les technologies de l'information et les compétences en programmation.",
+        "responsable": 1
+      }
+    },
+    {
+      "model": "uo.formation",
+      "pk": 2,
+      "fields": {
+        "intitule": "Licence Informatique — Parcours MIAGE",
+        "description": "Parcours MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), combinant informatique et gestion.",
+        "responsable": 2
+      }
+    },
+    {
+      "model": "uo.formation",
+      "pk": 3,
+      "fields": {
+        "intitule": "Master Informatique",
+        "description": "Formation de niveau Master dans le domaine de l'informatique, couvrant les aspects avancés des systèmes informatiques et de l'algorithmique.",
+        "responsable": 3
+      }
+    },
+    {
+      "model": "uo.formation",
+      "pk": 4,
+      "fields": {
+        "intitule": "Master MIAGE",
+        "description": "Master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), formation avancée alliant gestion et informatique.",
+        "responsable": 4
+      }
+    }
+  ]

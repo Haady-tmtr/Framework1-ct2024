@@ -1,0 +1,34 @@
+{% extends "uo/menu.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %} Modifier une UE {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-6 mb-4">Modifier l'Unité d'Enseignement (UE)</h1>
+        <p class="text-muted">Vous modifiez l'UE intitulée : <strong>{{ ue.titre }}</strong></p>
+    </div>
+    
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+                
+                <!-- Formulaire généré automatiquement avec bootstrap_form -->
+                {% bootstrap_form form layout='horizontal' %}
+                
+                <!-- Boutons d'action -->
+                <div class="text-end mt-4">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Enregistrer les modifications
+                    </button>
+                    <a href="{% url 'ues' %}" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Retour à la liste
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "uo/menu.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %} Unités d'Enseignement {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-6">Unités d'Enseignement</h1>
+        <p class="text-muted">Liste complète des UEs avec leurs responsables et crédits.</p>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" style="width: 5%;">#</th>
+                        <th scope="col" style="width: 30%;">Titre</th>
+                        <th scope="col" style="width: 10%;">Crédits</th>
+                        <th scope="col" style="width: 40%;">Responsable(s)</th>
+                        <th scope="col" style="width: 15%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ue in ues %}
+                        <tr>
+                            <td class="text-center">{{ forloop.counter }}</td>
+                            <td>{{ ue.titre }}</td>
+                            <td class="text-center">{{ ue.credits }}</td>
+                            <td>
+                                {% if ue.responsables.exists %}
+                                    <ul class="list-unstyled">
+                                        {% for responsable in ue.responsables.all %}
+                                            <li><i class="bi bi-person"></i> {{ responsable.last_name }} {{ responsable.first_name }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <span class="text-muted">Aucun responsable</span>
+                                {% endif %}
+                            </td>
+                            <td class="text-center">
+                                <a href="{% url 'details_ue' ue.id %}" class="btn btn-sm btn-info text-white ">
+                                    <i class="bi bi-eye"></i> Détails
+                                </a>
+                                {% for responsable in ue.responsables.all %}
+                                    {% for f in formations %}
+                                        {% if user.is_authenticated and user.id == f.responsable.id and  user.id == responsable.id%}
+                                        <a href="{% url 'supprimer_ue' ue.id %}" class="btn btn-sm btn-danger">
+                                                                        <i class="bi bi-trash"></i> Supprimer
+                                        </a>
+                                {% endif %}
+                                {% endfor %}
+                                {% endfor %}
+                                
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

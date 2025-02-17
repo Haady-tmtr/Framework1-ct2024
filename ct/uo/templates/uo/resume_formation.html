@@ -1,0 +1,41 @@
+{% extends "uo/menu.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %} About {% endblock %}
+
+{% block content %}
+    
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2>Résumé de {{ formation.intitule }}</h2>
+            <h4>Responsable : {{ formation.responsable.last_name }} {{ formation.responsable.first_name }}</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-6 card shadow-sm text-center pb-2 me-3">
+                <h3>Les données clés</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Nombre d'UEs : {{ ues.count }}</li>
+                    <li class="list-group-item">Nombre d'ECTS : {{ total_ects }}</li>
+                    <ul class="list-group-item list-group">
+                        <p>Nombre d'heures au total : {{ h_total }}</p>
+                        <li class="list-group-item">Nombre d'heures de CMs : {{ h_cms }}</li>
+                        <li class="list-group-item">Nombre d'heures de TDs : {{ h_tds }}</li>
+                        <li class="list-group-item">Nombre d'heures de TPs : {{ h_tps }}</li>
+                    </ul>
+                </ul>
+                 
+            </div>
+
+            <div class="col-5 card shadow-sm text-center pb-2 ms-3">
+                <h3>Les responsables d'UEs</h3>
+                <ul class="list-group">
+                    {% for responsable in responsables %}
+                        <li class="list-group-item">{{ responsable.last_name }} {{ responsable.first_name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

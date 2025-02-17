@@ -1,0 +1,12 @@
+{% extends "uo/menu.html" %}
+
+{% block content %}
+<h2>Confirmer la suppression de l'UE</h2>
+<p>Êtes-vous sûr(e) de vouloir supprimer l'UE suivante: <strong>{{ ue.titre }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Oui, supprimer</button>
+    <a href="{% url 'ues' %}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}
